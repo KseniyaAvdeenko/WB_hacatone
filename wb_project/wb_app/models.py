@@ -3,12 +3,19 @@ from django.db import models
 
 
 # Create your models here.
+class Destination(models.Model):
+    destination = models.CharField(max_length=255)
+
+
+class Departure(models.Model):
+    departure = models.CharField(max_length=255)
+
 
 class Client(models.Model):
     name = models.CharField(max_length=255)
     address = models.CharField(max_length=255)
     product = models.ForeignKey("Product", on_delete=models.CASCADE)
-    quantity =models.IntegerField()
+    quantity = models.IntegerField()
 
 
 class Category(models.Model):
@@ -28,3 +35,5 @@ class Transactions(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     client = models.ForeignKey(User, on_delete=models.CASCADE)
+    departure = models.ForeignKey(Departure, on_delete=models.CASCADE)
+    destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
