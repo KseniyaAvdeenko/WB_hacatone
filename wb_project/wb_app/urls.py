@@ -8,6 +8,7 @@ from .views import *
 router = SimpleRouter()
 router.register('/products', ProductViewSet, basename='products')
 router.register('/transactions', TransactionViewSet, basename='transactions')
+router.register('/clients', ClientViewSet, basename='client')
 
 urlpatterns = [
 

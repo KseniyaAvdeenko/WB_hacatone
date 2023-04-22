@@ -9,9 +9,11 @@ class ProductViewSet(FlexFieldsModelViewSet):
     serializer_class = ProductSerializer
 
 
-class TransactionViewSet(FlexFieldsModelViewSet):
+class TransactionViewSet(viewsets.ViewSet):
     queryset = Transactions.objects.all()
     serializer_class = TransactionsSerializer
+
+
 
 
 class ClientViewSet(FlexFieldsModelViewSet):
